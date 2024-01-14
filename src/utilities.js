@@ -16,7 +16,7 @@ const logToFile = async (info) => {
         throw new Error('Log info not in json format');
     }
     const currentTimeStamp = new Date();
-    info.timestamp = currentTimeStamp;
+    info.timestamp = currentTimeStamp.toLocaleString();
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
     let dateString = currentTimeStamp.toLocaleDateString('en-IN', options);
     dateString = dateString.replace(/\//g, '-');
