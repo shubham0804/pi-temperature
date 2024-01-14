@@ -12,9 +12,9 @@ const logTemperature = async () => {
 }
 
 const main = () => {
-    const interval = process.env.TEMPERATURE_LOG_INTERVAL_SECONDS;
-    const cronExpression = `*/${interval} * * * * *`;
-    const job = new CronJob(cronExpression, logTemperature);
+    const interval = process.env.TEMPERATURE_LOG_INTERVAL_MINUTES;
+    const cronExpression = `*/${interval} * * * *`;
+    const job = new CronJob(cronExpression, logTemperature, null, true, 'Asia/Kolkata');
 
     job.start();
 }
